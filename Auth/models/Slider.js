@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const SliderSchema = new mongoose.Schema({
     // _id: new mongoose.Types.ObjectId,
-name: {type: Number}
+name: {type: String}
 
 
 })

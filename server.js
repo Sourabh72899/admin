@@ -1,10 +1,8 @@
 
 const express = require('express');
 const app = express();
-const AdminRoute = require('./Routes/admin')
-const AdminSliderRoute = require('./Routes/Slider')
 
-const getSliderRoute = require('./Routes/getSliderImage')
+const AdminRoutes = require('./Auth/routes/AdminRoutes')
 
 const mongoose = require('mongoose')
 app.use(express.json());
@@ -17,9 +15,8 @@ mongoose.connect('mongodb://localhost/himotech', {useNewUrlParser: true, useUnif
     }
 });
 
-app.use('/admin',AdminRoute);
-app.use('/admin/slider',AdminSliderRoute)
-app.use('/getSliderImage',getSliderRoute)
+app.use('/admin',AdminRoutes);
+
 
 // app.use('/getDailyListing',dailylisting)
 
