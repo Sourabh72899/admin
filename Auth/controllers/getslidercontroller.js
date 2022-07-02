@@ -5,13 +5,13 @@ const storage = multer.memoryStorage()
 const Slider = require('../models/Slider')
 var upload = multer({ storage: storage });
 const s3Client = new AWS.S3({
-    secretAccessKey: "rVnsKb4L79Y/uYylj1Cb0vYFhq7kWRcltxPUDUXb",
+    secretAccessKey: process.env.secretAccessKey,
 
-    accessKeyId: "AKIAVQELLS46NW3VREPS",
-    region: 'ap-south-1'
+    accessKeyId: process.env.accessKeyId,
+    region: process.env.region
 })
 const uploadParams = {
-    Bucket: 'inhouse-media',
+    Bucket: process.env.Bucket,
     Key: '',
     Body: null,
 };

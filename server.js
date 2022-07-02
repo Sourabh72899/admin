@@ -1,7 +1,8 @@
 
 const express = require('express');
 const app = express();
-
+require('dotenv').config()
+const PORT = process.env.PORT
 const AdminRoutes = require('./Auth/routes/AdminRoutes')
 
 const mongoose = require('mongoose')
@@ -21,8 +22,8 @@ app.use('/admin',AdminRoutes);
 // app.use('/getDailyListing',dailylisting)
 
 
-app.listen(3800,()=>{
-    console.log('server is running on port 3800')
+app.listen(PORT,()=>{
+    console.log(`server is running on port ${PORT}`)
 })
 
 
