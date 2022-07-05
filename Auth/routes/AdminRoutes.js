@@ -10,7 +10,7 @@ const storage = multer.memoryStorage()
 const upload = multer({storage: storage});
 
 const {adminRegister, adminLogin, getAdminProfile, adminChangePassword} = require('../controllers/admincontrollers')
-const {addSliderId, adddSliderImage, getBySliderId, addSliderName, updateSliderName, deleteSlider} = require('../controllers/getslidercontroller')
+const {addSliderId, adddSliderImage, getBySliderId, addSliderName, updateSliderName, deleteSlider, getSliderName} = require('../controllers/getslidercontroller')
 router.post('/register',adminRegister)
 router.post('/login',adminLogin)
 router.get('/profile/:id',checkAuth,getAdminProfile)
@@ -20,6 +20,7 @@ router.put('/uploadImage/:sliderId',upload.single("uploadImage") , adddSliderIma
 router.get('/getBySliders', getBySliderId)
 router.post('/addSliderName',addSliderName)
 router.put('/updateSliderName/:id',updateSliderName)
+router.get('/getSliderName',getSliderName)
 router.delete('/removeSliderName/:id',deleteSlider)
 
 

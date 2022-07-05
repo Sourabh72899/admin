@@ -7,7 +7,7 @@ const AdminRoutes = require('./Auth/routes/AdminRoutes')
 
 const mongoose = require('mongoose')
 app.use(express.json());
-mongoose.connect('mongodb://localhost/himotech', {useNewUrlParser: true, useUnifiedTopology: true}, function (err) {
+mongoose.connect('mongodb+srv://sourabh:7289933709sourabh@inhousedemo.yrgfd.mongodb.net/test', {useNewUrlParser: true, useUnifiedTopology: true}, function (err) {
     if (err) {
         console.log("DB Error: ", err);
         process.exit(1);
